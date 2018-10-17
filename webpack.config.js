@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
@@ -10,18 +10,24 @@ const config = {
     cache: true,
     devtool: 'source-map',
     node: {fs: 'empty'},
-    stats: {
-        colors: true,
-        reasons: true,
-    },
     optimization: {
         noEmitOnErrors: true
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'src'),
+        port: 3000,
+        hot: true,
+        inline: true,
+        host: 'localhost',
+        historyApiFallback: true,
+        stats: {
+            colors: true
+        }
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: './dist/app.css'
         }),
-        new CaseSensitivePathsPlugin(),
         new webpack.optimize.LimitChunkCountPlugin({
             maxChunks: 15
         }),

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {configureStore} from './store/configure-store';
-import App from './app';
+import {configureStore} from './js/store/configure-store';
+import App from './js/app';
 
 const store = configureStore();
 
