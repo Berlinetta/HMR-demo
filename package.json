@@ -38,6 +38,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-concat": "2.6.1",
     "gulp-rimraf": "0.2.2",

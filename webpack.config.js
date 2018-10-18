@@ -4,29 +4,18 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: ['webpack/hot/dev-server', './src/index.js'],
     target: 'web',
-    output: {filename: './dist/app.js'},
+    output: {filename: 'app.js'},
     cache: true,
     devtool: 'source-map',
     node: {fs: 'empty'},
     optimization: {
         noEmitOnErrors: true
     },
-    devServer: {
-        contentBase: path.join(__dirname, 'src'),
-        port: 3000,
-        hot: true,
-        inline: true,
-        host: 'localhost',
-        historyApiFallback: true,
-        stats: {
-            colors: true
-        }
-    },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: './dist/app.css'
+            filename: 'app.css'
         }),
         new webpack.optimize.LimitChunkCountPlugin({
             maxChunks: 15

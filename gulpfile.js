@@ -27,9 +27,11 @@ gulp.task('clean-demo', () => {
     return gulp
         .src(
             [
-                `${DOCS_OUT_DIR}/js`,
-                `${DOCS_OUT_DIR}/css`,
-                `${DOCS_OUT_DIR}/images`
+                `${DOCS_OUT_DIR}/app.js`,
+                `${DOCS_OUT_DIR}/app.js.map`,
+                `${DOCS_OUT_DIR}/app.css`,
+                `${DOCS_OUT_DIR}/app.css.map`,
+                `${DOCS_OUT_DIR}/vendor.js`
             ],
             {read: false}
         )
@@ -40,7 +42,7 @@ gulp.task('bundle-demo-vendor', () => {
     return gulp
         .src(vendors)
         .pipe(concat('vendor.js'))
-        .pipe(gulp.dest(`./${DOCS_OUT_DIR}/js/`));
+        .pipe(gulp.dest(`./${DOCS_OUT_DIR}/`));
 });
 gulp.task('bundle-demo-app', () => {
     return gulp
