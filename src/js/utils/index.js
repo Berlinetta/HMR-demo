@@ -1,1 +1,1 @@
-export const testPrint = () => 'this is to test the HMR in utility functions d';
+export const testPrint = () => 'this is to test the HMR in utility functions c';

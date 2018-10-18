@@ -5,13 +5,14 @@ const config = require('./webpack.config.js');
 const devServerOptions = {
     contentBase: './dist',
     hot: true,
+    hotOnly: true,
     host: 'localhost',
     index: 'index.html',
     stats: {
         colors: true
     },
     port: 4000,
-    inline: true,
+    inline: false,
     historyApiFallback: true
 };
 

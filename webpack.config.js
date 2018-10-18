@@ -4,7 +4,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
     mode: 'development',
-    entry: ['webpack/hot/dev-server', './src/index.js'],
+    entry: [
+        'webpack-dev-server/client?http://localhost:4000',
+        'webpack/hot/dev-server',//'webpack/hot/dev-server'
+        './src/index.js'
+    ],
     target: 'web',
     output: {filename: 'app.js'},
     cache: true,
@@ -40,7 +44,7 @@ const config = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
+                //exclude: /node_modules/,
                 use: [
                     {
                         loader: 'babel-loader',
