@@ -1,6 +1,6 @@
 const webpack = require('webpack');
-const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
 const config = {
     mode: 'development',
@@ -18,6 +18,7 @@ const config = {
         noEmitOnErrors: true
     },
     plugins: [
+        new CaseSensitivePathsPlugin(),
         new MiniCssExtractPlugin({
             filename: 'app.css'
         }),

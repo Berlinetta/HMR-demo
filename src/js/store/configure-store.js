@@ -6,13 +6,14 @@ export const configureStore = () => {
         rootReducer
     );
 
-    if (module.hot) {
-        // Enable Webpack hot module replacement for reducers
-        module.hot.accept('../reducers', () => {
-            const nextRootReducer = require('../reducers/index');
-            store.replaceReducer(nextRootReducer);
-        });
-    }
+    // if (module.hot) {
+    //     // Enable Webpack hot module replacement for reducers
+    //     module.hot.accept('../reducers', () => {
+    //         console.log("configureStore rerun");
+    //         const nextRootReducer = require('../reducers/index');
+    //         store.replaceReducer(nextRootReducer);
+    //     });
+    // }
 
     return store;
 };

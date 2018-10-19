@@ -1,10 +1,10 @@
 {
   "name": "HMR-demo",
-  "description": "A minimal example of Hot Module Replacement (or HMR) in a Redux application",
+  "description": "A minimal example of Hot Module Replacement(HMR) in a Redux application",
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dashboard -- webpack-dev-server"
+    "start": "node server.js"
   },
   "dependencies": {
     "react": "^16.4.0",
@@ -39,6 +39,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.4",
+    "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "css-loader": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-concat": "2.6.1",
@@ -50,7 +51,6 @@
     "path": "^0.12.7",
     "react": "16.2.0",
     "react-dom": "16.2.0",
-    "react-hot-loader": "^4.3.11",
     "react-redux": "~4.4.5",
     "redux": "~3.5.2",
     "webpack": "4.19.0",
