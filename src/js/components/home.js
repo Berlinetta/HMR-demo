@@ -4,7 +4,7 @@ import Footer from './footer';
 import {decreaseCounter, increaseCounter} from "../actions/home";
 import {testPrint} from '../utils';
 
-import './home.css';
+import './home.less';
 
 class HomeApp extends React.Component {
     render() {

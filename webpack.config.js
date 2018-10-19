@@ -2,11 +2,13 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
+const supportCssHMR = true;
+
 const config = {
     mode: 'development',
     entry: [
         'webpack-dev-server/client?http://localhost:4000',
-        'webpack/hot/dev-server',//'webpack/hot/dev-server'
+        'webpack/hot/dev-server',
         './src/index.js'
     ],
     target: 'web',
@@ -76,11 +78,11 @@ const config = {
             {
                 test: /\.less$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    supportCssHMR ? "style-loader" : MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true,
+                            modules: false,//true to enable css modules.
                             importLoaders: 1,
                             localIdentName: `neptune_[local]_[hash:base64:5]`
                         },
@@ -91,7 +93,7 @@ const config = {
             {
                 test: /\.css/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    supportCssHMR ? "style-loader" : MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
